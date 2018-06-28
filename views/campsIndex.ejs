@@ -1,0 +1,33 @@
+<% include partials/header %>
+
+
+    <div class="container">
+
+        <div class="container">
+            <header class="jumbotron">
+                <h1 class="display-4">Welcome to Yelp Camp</h1>
+                <p class="lead">View our hand picked camp grounds from all over Sri Lanka</p>
+                <a class="btn btn-primary btn-lg" href="/campGrounds/newCamp">Add New Camp Ground</a>
+            </header>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <% campGrounds.forEach (function (campGrd) { %>
+                    <div class="col-sm-4">
+                        <img class="img-thumbnail" src=" <%= campGrd.image %> ">
+                        <h5 class="text-center">
+                            <%= campGrd.name %>
+                        </h5>
+                        <p>
+                            <!--This button trigger the url parameter to /campGrounds/id -->
+                            <!-- It will subseqently captured by the showCamp route to display the data of the Camp Ground-->
+                            <a class="btn btn-primary btn-sm" href="/campGrounds/<%= campGrd._id%>">More Info</a>
+                        </p>
+                    </div>
+                    <% }); %>
+            </div>
+        </div>
+
+    </div>
+    <% include partials/footer %>

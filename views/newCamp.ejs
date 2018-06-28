@@ -1,0 +1,26 @@
+<% include partials/header %>
+
+    <div class="container">
+        <h1 style="text-align: center">Create a New Camp Ground</h1>
+        <div style="width: 30%; margin: 20px auto">
+            <form action="/campGrounds" method="POST">
+                <div class="form-group">
+                    <label for="campGroundName">Camp Ground Name</label>
+                    <input class="form-control" id="campGroundName" name="campGroundName" type="text" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <label for="campGroundImage">Camp Ground Image</label>
+                    <input class="form-control" id="campGroundImage" name="campGroundImage" type="text" placeholder="Image Url">
+                </div>
+                <div class="form-group">
+                        <label for="campGroundDescription">Camp Ground Description</label>
+                        <input class="form-control" id="campGroundDescription" name="campGroundDescription" type="text" placeholder="Camp Ground Description">
+                    </div>
+                <button class="btn btn-primary btn-block" type="submit">Submit</button>
+            </form>
+
+            <a href="/campGrounds">Go Back</a>
+        </div>
+    </div>
+
+<% include partials/footer %>
